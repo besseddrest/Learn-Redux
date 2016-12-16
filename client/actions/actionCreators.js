@@ -10,32 +10,39 @@
   It's a code convention to use all capitals and snake case for the event names
   We use const to store the name of the event so it is immutable
 
+  HC:
+  Just regular javascript events that get fired off
+  this is the file that makes actions that are about to get dispatched
+  an action is just an object with information about what happened and what needs to change
+  
 */
 
-export function increment(i) {
+// increment
+export function increment(index) {
   return {
     type: 'INCREMENT_LIKES',
-    index: i
-  };
+    // payload: don't need to send all info, just what matters
+    // in this case, the indentifier of the post
+    index // ES6
+  }
 }
 
-/*
-  Comments
-*/
-
+// add comment
 export function addComment(postId, author, comment) {
   return {
     type: 'ADD_COMMENT',
     postId,
-    author, // same as author: author
-    comment // same as comment: comment
-  };
+    author,
+    comment
+  }
 }
 
-export function removeComment(postId, i){
+// remove comment
+export function removeComment(postId, index) {
   return {
     type: 'REMOVE_COMMENT',
-    i,
+    index,
     postId
-  };
+  }
 }
+// @@router/LOCATION_CHANGE - provided by react-router when you change pages

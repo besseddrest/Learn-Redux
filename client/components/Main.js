@@ -1,21 +1,19 @@
+// Main is really just a presentational component
 import React from 'react';
-import { Link } from 'react-router';
+import {Link} from 'react-router'; // URL utility?
 
 const Main = React.createClass({
-
   render() {
-    // Then we go ahead and return some JSX
+    // React.cloneElement allows us to pass props to either child: PhotoGrid or Single
     return (
       <div>
         <h1>
-          <Link to="/">Reduxstagram</Link>
+          <Link to="/">Haroldstagram</Link>
         </h1>
-        {/* We use cloneElement here so we can auto pass down props */}
-        { React.cloneElement(this.props.children, this.props) }
+        {React.cloneElement(this.props.children, this.props)}
       </div>
-    );
+    )
   }
-
 });
 
 export default Main;
